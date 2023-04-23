@@ -11,7 +11,7 @@ export interface prayerTimesForDay {
 	//formatedDate:string;
 	weekDay:string;
 	timeZoneName: string;
-	timeZoneId: string;
+	//timeZoneId: string;
 	timeZoneAbbreviation:string;
 	//timeZoneChange:boolean;
 	//maghribIsAdjusted: boolean;
@@ -19,7 +19,7 @@ export interface prayerTimesForDay {
 	//fajrIsAdjustedEarlier: boolean;
 	//maghribIsAdjustedLater: boolean;
 	//times: [prayerTime];
-	//hijriDate:hijriDate;
+	hijriDate:hijriDate;
 	fajr:string;
 	sunrise:string;
 	zuhr:string;

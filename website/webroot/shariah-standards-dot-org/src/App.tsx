@@ -12,7 +12,6 @@ function App() {
       <div>
         <PrayerTimesWithQiblaMap 
           googleMapsApiKey='AIzaSyDkUNGxIGkE0rSqFmbpooGKixa5T5G8G3s'        
-          date={new Date()} 
         />
       </div>
     </div>

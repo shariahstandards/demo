@@ -1,11 +1,10 @@
-import {timeZoneInfo} from './timeZoneInfo.interface'
+// import {timeZoneInfo} from './timeZoneInfo.interface'
 import {prayerTimesForDay} from './prayerTimesForDay'
 import{hijriDate} from './hijriDate.interface'
 import moment from 'moment-timezone';
 import { hijriMonth } from './hijriMonth.interface';
 declare var require: any;
 var SunCalc = require('suncalc');
-//var moment = require('moment-timezone');
 export class ShariahstandardsOrgPrayerTimesService {
 
   	_apiKey:string|undefined;
@@ -38,11 +37,10 @@ export class ShariahstandardsOrgPrayerTimesService {
 
 	//https://www.timeapi.io/api/TimeZone/coordinate?latitude=38.9&longitude=-77.03
 
-	async getPrayerTimes(date:Date,lng:number,lat:number):Promise<prayerTimesForDay> {
+	async getPrayerTimes(date:Date,lng:number,lat:number, timeZoneId:string):Promise<prayerTimesForDay> {
 		// var zones = moment.tz.names();
-		// console.log(zones);
-		var zone = moment.tz.zone("Europe/London");
-       // var timeZone = await this.getTimeZone(date,lat,lng);
+        //var timeZone = await this.getTimeZone(date,lat,lng);
+		var zone = moment.tz.zone(timeZoneId);//"Europe/London");
 		return this.getPrayerTimesForTimeZone(date,zone!,lng,lat)
 	}
 	
@@ -222,35 +220,12 @@ export class ShariahstandardsOrgPrayerTimesService {
 		if (date != null && moment(date).isValid()) {
 			dateMoment = moment(date).startOf('d').add(12, 'h');
 		}
-//		var timeZoneOffsetMinutes=zone?.parse(Date.UTC(date.getFullYear(),date.getMonth(),date.getDate(),12,0,0));
 
 		var timestamp=dateMoment.format("x");
 		var utcOffset=0-zone.utcOffset(Number(timestamp))/ 60.0;
-		//var timeZoneAbbreviation=moment.tz.zone(timeZone.timeZoneId).abbr(Number(timestamp));
-		//utcOffset = (timeZone.dstOffset + timeZone.rawOffset) / 3600.0;
 
 		SunCalc.addTime(-18, 'fajr', 'isha');
 		var times = self.getAdjustedTimes(latitude, longitude, dateMoment.toDate(), utcOffset);
-		// var hijriDate:hijriDate =null;
-		// if(yesterdayHijri==null){
-		// 	hijriDate=this.getHijriDate(latitude, longitude, dateMoment.toDate(), utcOffset);
-		// }
-		// else{
-		// 	if(!yesterDayWasNewMoon)
-		// 	{
-		// 		hijriDate={
-		// 			day:yesterdayHijri.day+1,
-		// 			month:yesterdayHijri.month,
-		// 			year:yesterdayHijri.year
-		// 		}
-		// 	}else{
-		// 		hijriDate={
-		// 				day:1,
-		// 				month: this.hijriMonths[yesterdayHijri.month.number%12],
-		// 				year:yesterdayHijri.year+Math.floor((yesterdayHijri.month.number/12))
-		// 			}
-		// 	}
-		// }
 		let result:prayerTimesForDay= {
 			//result.moonVisibility=times.moonVisibility;
 			//result.startOfLunarMonth= times.startOfLunarMonth;

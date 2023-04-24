@@ -4,9 +4,7 @@ export interface MapLocation{
 	longitude: number;
 	locationName: string;
 }
-export interface PrayerTimesProperties {
-	googleMapsApiKey: string;
+
+export interface PrayerTimesProperties extends MapLocation {
 	date: Date | undefined;
-	
-	
 }

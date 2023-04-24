@@ -7,7 +7,6 @@ import { MapLocation } from '../Services/PrayerTimesProperies'
 
 
 export const PrayerTimes = (props: {
-	googleMapsApiKey:string,
 	date:Date,
 	mapLocation:MapLocation,
 	timeZoneId:string
@@ -22,13 +21,12 @@ export const PrayerTimes = (props: {
 
 	useEffect(() => {
 		const service = new ShariahstandardsOrgPrayerTimesService();
-		service.apiKey = props.googleMapsApiKey;
 		const getPrayerTimes = async () => {			
 			var p = await service.getPrayerTimes(props.date ?? new Date(), props.mapLocation.longitude, props.mapLocation.latitude,props.timeZoneId);
 			setPrayerTimes(p);
 		}
 		getPrayerTimes();
-	}, [props.mapLocation,props.date,props.googleMapsApiKey, props.timeZoneId])
+	}, [props.mapLocation,props.date, props.timeZoneId])
 
 	return (
 		<div>
@@ -39,19 +37,16 @@ export const PrayerTimes = (props: {
 					<span className="shariahstandards-prayertimes__date">
 						{prayerTimes.weekDay} &nbsp; {prayerTimes.simpleDate} &nbsp;
 					</span>
-				</div>
-				<div>
+				
 					<span className="shariahstandards-prayertimes__date">
 						{prayerTimes.hijriDate.day} &nbsp; 
 						{prayerTimes.hijriDate.month.arabicName} &nbsp;
 						{prayerTimes.hijriDate.month.englishName} &nbsp;
 						{prayerTimes.hijriDate.year} &nbsp;
 					</span>
+					
 				</div>
 				<div>
-					<span className="shariahstandards-prayertimes__time-zone">
-						{prayerTimes.timeZoneName} ({prayerTimes.timeZoneAbbreviation})
-					</span>
 					<div style={{ display: 'none' }}>{props.mapLocation.latitude}, {props.mapLocation.longitude}</div>
 					<div style={{
 						display: 'flex',
@@ -68,6 +63,7 @@ export const PrayerTimes = (props: {
 							<div style={{ clear: 'both' }}></div>
 						</div>
 					</div>
+					<div>{prayerTimes.timeZoneName} {prayerTimes.timeZoneAbbreviation}</div>
 				</div>
 				</>}
 		</div>

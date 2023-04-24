@@ -71,7 +71,7 @@ export const QiblaMap = (props: {
     <>
       <div style={containerStyle}>
         <GoogleMap
-          mapContainerStyle={{ width: "50%", height: "500px" }}
+          mapContainerStyle={{ width: "80%", height: "500px" }}
           center={mapCentre}
           zoom={12}
           onLoad={onLoad}

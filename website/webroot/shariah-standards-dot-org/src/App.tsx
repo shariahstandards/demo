@@ -1,6 +1,23 @@
+import { useEffect, useState } from 'react';
 import './App.css';
 import { PrayerTimesWithQiblaMap } from './Compnents/PrayerTimesWithQiblaMap'
-function App() {
+
+interface appConfig{
+  googleMapsApiKey:string
+}
+export const App= ()=> {
+  const [config,setConfig] = useState<appConfig|undefined>()
+  useEffect(()=>{
+    const getConfig = async()=>{
+      var response = await fetch("config.json");
+      var responseObject =await response.json() as appConfig;
+      return responseObject;
+    }
+    getConfig().then(response=>{
+      setConfig(response);
+    })
+  },[])
+
   return (
     <div className="App">
       <header className="App-header">
@@ -10,12 +27,12 @@ function App() {
         Shariah Standards 
       </div>
       <div>
+        {config &&
         <PrayerTimesWithQiblaMap 
-          googleMapsApiKey='AIzaSyDkUNGxIGkE0rSqFmbpooGKixa5T5G8G3s'        
-        />
+          googleMapsApiKey={config.googleMapsApiKey}
+        />}
       </div>
     </div>
   );
 }
 
-export default App;

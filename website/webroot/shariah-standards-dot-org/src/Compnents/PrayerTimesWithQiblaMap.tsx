@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { MapLocation } from '../Services/PrayerTimesProperies'
 import { PrayerTimes } from './PrayerTimes'
 import { QiblaMap } from './QiblaMap'
 import { LocationSearch } from './LocationSearch';
 import { useJsApiLoader } from '@react-google-maps/api';
 import useLocalStorage from 'use-local-storage';
-import { TimeZoneSelector } from './TimeZoneSelector';
+// import { TimeZoneSelector } from './TimeZoneSelector';
+import { ShariahstandardsOrgPrayerTimesService } from '../Services/prayerTimesService';
 
 
 
@@ -17,26 +18,36 @@ import { TimeZoneSelector } from './TimeZoneSelector';
       })
 	const [mapLocation,setMapLocation] = useLocalStorage<MapLocation|undefined>("ShariahStandards-MapLocation",undefined);
 	const [timeZoneId,setTimeZoneId] = useLocalStorage<string|undefined>("ShariahStandards-TimeZone",undefined);
-
-    const setSearchResultOnMap = async (result : MapLocation)=>{
+    const [showQibla,setShowQibla] = useState(false);
+    const [shownDate,setShownDate] = useState(new Date());
+    const setSearchResultOnMap = async (result : MapLocation, updateTimeZone:boolean)=>{
         setMapLocation(result);
+        if(updateTimeZone || !timeZoneId)
+        {
+            var timeZone=await (new ShariahstandardsOrgPrayerTimesService().getTimeZone(shownDate,result.latitude,result.longitude,props.googleMapsApiKey));
+            if(timeZone){
+                setTimeZoneId(timeZone.timeZoneId);
+            }
+        }
+
       }
     if(!isLoaded){
         return<div>loading...</div>
     }
     return (<div>
-        <LocationSearch searchText='' onNewLocationFound={setSearchResultOnMap} previouslyFoundMapLocation={mapLocation} clearLocation={()=>setMapLocation(undefined)}/>
-        <TimeZoneSelector onTimeZoneIdSelected={setTimeZoneId} timeZoneId={timeZoneId}/>
+        <LocationSearch searchText='' onNewLocationFound={(loc)=>setSearchResultOnMap(loc,true)} previouslyFoundMapLocation={mapLocation} clearLocation={()=>setMapLocation(undefined)}/>
+        {/* <TimeZoneSelector onTimeZoneIdSelected={setTimeZoneId} timeZoneId={timeZoneId}/> */}
         
         
-        {mapLocation && timeZoneId && <>
+        { mapLocation && timeZoneId && <>
             <PrayerTimes 
-                date={new Date()} 
+                date={shownDate} 
                 mapLocation={mapLocation} 
-                googleMapsApiKey={props.googleMapsApiKey} 
                 timeZoneId={timeZoneId}
                 />
-            <QiblaMap mapLocation={mapLocation} onNewLocationFound={setSearchResultOnMap}/>
+                {(!showQibla) && <button style={{margin:20}} onClick={()=>setShowQibla(true)}>Show Qibla</button>}
+                {(showQibla) && <button style={{margin:20}}onClick={()=>setShowQibla(false)}>Hide Qibla</button>}
+            {showQibla &&<QiblaMap mapLocation={mapLocation} onNewLocationFound={loc=>setSearchResultOnMap(loc,false)}/>}
             </>}
         </div>)
 }

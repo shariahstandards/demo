@@ -1,4 +1,4 @@
-// import {timeZoneInfo} from './timeZoneInfo.interface'
+import {timeZoneInfo} from './timeZoneInfo.interface'
 import {prayerTimesForDay} from './prayerTimesForDay'
 import{hijriDate} from './hijriDate.interface'
 import moment from 'moment-timezone';
@@ -7,35 +7,28 @@ declare var require: any;
 var SunCalc = require('suncalc');
 export class ShariahstandardsOrgPrayerTimesService {
 
-  	_apiKey:string|undefined;
-  	set apiKey(value:string){
-  		this._apiKey=value;	
-  	}
 
   	_getMiddayMoment(date:Date):any{
     	// throw "not implemented";
 		return moment(date).startOf('d').add(12, 'h');
   	}
+	  // change to use https://www.timeapi.io/swagger/index.html
+	
+    async getTimeZone(date: Date, latitude: number, longitude: number, googleApiKey:string): Promise<timeZoneInfo> {
+    	var dateMoment = this._getMiddayMoment(date);
+		var url = 'https://maps.googleapis.com/maps/api/timezone/json?location=' + latitude + "," + longitude
+		+ "&timestamp=" + dateMoment.unix()+"&key="+googleApiKey;
+		var response = await fetch(url);
+		var model=(await response.json()) as timeZoneInfo;			
+		return model;			
+	};
+        // change to use https://www.timeapi.io/swagger/index.html
+        // var timeZoneResponse=await fetch("https://www.timeapi.io/api/TimeZone/coordinate?latitude="+result.latitude+"&longitude="+result.longitude);
+        // var timeZone=timeZoneResponse.json();
+        // console.log(timeZone);
   	_getResponseObject<T>(response:Response){
   		return response.json() as T;
   	}
-	// change to use https://www.timeapi.io/swagger/index.html
-	
-    // async getTimeZone(date: Date, latitude: number, longitude: number): Promise<timeZoneInfo> {
-    // 	var defaultZoneInfo={rawOffset: 0,	dstOffset: 0,	timeZoneName: "Greewich mean time",	timeZoneId:"GMT",status:"OK"};
-    // 	var dateMoment = this._getMiddayMoment(date);
-	// 		var url = 'https://maps.googleapis.com/maps/api/timezone/json?location=' + latitude + "," + longitude
-	// 	 	+ "&timestamp=" + dateMoment.unix()+"&key="+this._apiKey;
-	// 		var response = await fetch(url);
-	// 		var model=(await response.json()) as timeZoneInfo;
-	// 		if(model.status==="ZERO_RESULTS")
-	// 		{
-	// 			return defaultZoneInfo;
-	// 		}
-	// 		return model;			
-	// };
-
-	//https://www.timeapi.io/api/TimeZone/coordinate?latitude=38.9&longitude=-77.03
 
 	async getPrayerTimes(date:Date,lng:number,lat:number, timeZoneId:string):Promise<prayerTimesForDay> {
 		// var zones = moment.tz.names();

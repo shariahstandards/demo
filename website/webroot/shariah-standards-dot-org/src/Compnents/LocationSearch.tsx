@@ -1,5 +1,6 @@
 import { KeyboardEvent, useState } from "react";
 import { MapLocation } from "../Services/PrayerTimesProperies";
+import {MdModeEdit} from 'react-icons/md'
 
 export interface LocationSearchProps{
     searchText:string,
@@ -36,7 +37,7 @@ export const LocationSearch=(props:LocationSearchProps)=>{
         searchLocation();
       }
     };
-    return (<>
+    return (<div style={{padding:10}}>
         {(!props.previouslyFoundMapLocation) &&
     <div>
         <input 
@@ -49,6 +50,6 @@ export const LocationSearch=(props:LocationSearchProps)=>{
         {canSearch() && <button onClick={()=>searchLocation()} type={"submit"}>Search</button>}
         {searched && (!resultsFound) && <>No results Found</>}
     </div>}
-        {props.previouslyFoundMapLocation && <div>{props.previouslyFoundMapLocation.locationName} <button onClick={()=>{props.clearLocation()}}>X</button></div>}
-    </>);
+        {props.previouslyFoundMapLocation && <div>{props.previouslyFoundMapLocation.locationName} <MdModeEdit style={{cursor:"pointer"}} onClick={()=>{props.clearLocation()}}/></div>}
+    </div>);
 }

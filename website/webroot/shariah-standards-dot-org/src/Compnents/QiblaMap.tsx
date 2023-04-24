@@ -1,80 +1,86 @@
-import React, { useEffect, useState } from 'react'
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-import { LocationSearch } from './LocationSearch';
-import useLocalStorage from 'use-local-storage';
+import React, { useEffect, useMemo, useState } from 'react'
+import { GoogleMap } from '@react-google-maps/api';
 import { MapLocation } from '../Services/PrayerTimesProperies';
 
 const containerStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width:"100%"
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: "100%"
 };
 
 
-export const QiblaMap=()=> {
-  const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script',
-    googleMapsApiKey:"AIzaSyDkUNGxIGkE0rSqFmbpooGKixa5T5G8G3s"
-  })
-  const [mapLocation] = useLocalStorage<MapLocation|undefined>("ShariahStandards-MapLocation",undefined);
+export const QiblaMap = (props: {
+  mapLocation: MapLocation,
+  onNewLocationFound: (response: MapLocation) => void
+}) => {
 
-  // useEffect(()=>{
-  //   if(mapLocation && google){
-  //     // setMapCenter(
-  //     //   new google.maps.LatLng(mapLocation?.latitude,mapLocation?.longitude));
-  //   }
-  // },[mapLocation])
-  const [map, setMap] = React.useState<google.maps.Map|null>(null)
-
-  const [mapCentre,setMapCenter]=useState<google.maps.LatLng|undefined>()
-
-  const onLoad = React.useCallback(function callback(map:google.maps.Map) {
-    setMap(map);
-    if(mapLocation){
-      console.log(mapLocation);
-
-      setMapCenter(
-        new google.maps.LatLng(mapLocation.latitude,mapLocation.longitude));
-    }
-  }, [])
-
-  const onUnmount = React.useCallback(function callback(map:any) {
-    setMap(null);
-  }, [])
+  const [map, setMap] = React.useState<google.maps.Map | null>(null)
+  const [mapCentre, setMapCenter] = useState<google.maps.LatLng | undefined>()
+ // const [qibla,setQibla] = useState<google.maps.Polyline |undefined>();
   
-  const setSearchResultOnMap = async (result : google.maps.GeocoderResult)=>{
+  const onLoad = React.useCallback((mapLoaded: google.maps.Map) => {
+    // This is just an example of getting and using the map instance!!! don't just blindly copy!
+    // const bounds = new window.google.maps.LatLngBounds(mapCentre);
+    // map.fitBounds(bounds);
 
-    setMapCenter(result.geometry.location);
-    //self.placeQiblaOnMap();
-    // self.getPrayerTimes();
-    // self.buildCalendar();
-    if(map){ map.setZoom(10); }
-
+    setMap(mapLoaded)
+   
+  }, [])
+  var qiblaLine =  useMemo(()=>{return new google.maps.Polyline({
+    strokeColor: '#ff0000',
+    strokeWeight: 2,
+    strokeOpacity: 1,
+    geodesic: true
+  })},[]);
+  if(map){
+    var newQiblaPath = [
+      { lat:props.mapLocation.latitude, lng:props.mapLocation.longitude},
+      { lat:21.422441833015604, lng:39.82616901397705}
+    ];
+    qiblaLine.setPath(newQiblaPath);
+    qiblaLine.setMap(map);
   }
-
-
+  const onUnmount = React.useCallback((map: google.maps.Map) => {
+    setMap(null)
+  }, [])
+  useEffect(() => {
+    if (props.mapLocation) {
+      setMapCenter(
+        new google.maps.LatLng(props.mapLocation.latitude, props.mapLocation.longitude));
+    }
+  }, [props.mapLocation])
   
-  return (isLoaded) ? (
-    <> 
-    <LocationSearch searchText='' onNewLocationFound={setSearchResultOnMap}/>
-    <div style={containerStyle}>       
-      <GoogleMap
-        mapContainerStyle={{width:"50%",height:"500px"}}
-        center={mapCentre}
-        zoom={12}
-        onLoad={onLoad}
-        onUnmount={onUnmount}
-      >
-        { /* Child components, such as markers, info windows, etc. */ }
-        <>{map&& <span style={{display:"none"}}> map object set</span>}</>
-      </GoogleMap>
-      
+  const onClick = React.useCallback(async (mousemapEvent: google.maps.MapMouseEvent) => {
+    qiblaLine.setMap(null);
+    var geocoder = new google.maps.Geocoder();
+    var response = await geocoder.geocode({ 'location': mousemapEvent.latLng });
+    if (response.results.length > 0) {
+      var topResult = response.results[0];
+      var newMapLocation = {
+        latitude: topResult.geometry.location.lat(),
+        longitude: topResult.geometry.location.lng(),
+        locationName: topResult.formatted_address
+      };
+      props.onNewLocationFound(newMapLocation);
+    }
+  }, [props,qiblaLine]);
+
+
+  return (
+    <>
+      <div style={containerStyle}>
+        <GoogleMap
+          mapContainerStyle={{ width: "50%", height: "500px" }}
+          center={mapCentre}
+          zoom={12}
+          onLoad={onLoad}
+          onUnmount={onUnmount}
+          onClick={onClick}
+        >
+        </GoogleMap>
       </div>
-      {mapLocation && <div>{mapLocation.locationName}</div>}
-      </>
-  ) : <>
-    <br/>
-   <LocationSearch searchText='' onNewLocationFound={setSearchResultOnMap}/>
-   </>
-}
+
+    </>
+  );
+} 

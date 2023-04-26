@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { CurrencyService } from "../Services/currencyService";
-import { Guid } from "guid-typescript";
-import { ActionButton, Button, Input, NumberInput, PageContainer, PageHeading, SectionHeading, SelectList, SelectListOption } from "../Compnents/Wrappers";
+import { Button, NumberInput, PageContainer, PageHeading, SectionHeading, SelectList } from "../Compnents/Wrappers";
+import useLocalStorage from "use-local-storage";
 
 export interface asset{
 	description:string,
 	amount:number,
-    id:Guid
+    id:string
 } 
 export interface debt{
 	description:string,
 	amount:number,
-    id:Guid
+    id:string
 } 
 export interface currency{
 	name:string,
@@ -74,6 +74,15 @@ export const DebtRow=(props:{debt:debt, currencyName:string, remove:(debt:debt)=
             </tr>
     )
 }
+class Guid {
+    static create() {
+      return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+        const r = (Math.random() * 16) | 0;
+        const v = c === "x" ? r : (r & 0x3) | 0x8;
+        return v.toString(16);
+      });
+    }
+  }
 
 export const AddAsset=(props:{currencyName:string,addAsset:(asset:asset)=>void})=>{
     const [description,setDescription]=useState("");
@@ -81,7 +90,7 @@ export const AddAsset=(props:{currencyName:string,addAsset:(asset:asset)=>void})
     const currency=currencyDictionary[props.currencyName];
     
     const add=()=>{
-        props.addAsset({amount:Number(amount),description, id:Guid.create()});
+        props.addAsset({amount:Number(amount),description, id:Guid.create().toString()});
         setAmount("");
         setDescription("");
     }
@@ -137,7 +146,7 @@ export const AddDebt=(props:{currencyName:string,addDebt:(debt:debt)=>void})=>{
     const currency=currencyDictionary[props.currencyName];
     
     const add=()=>{
-        props.addDebt({amount:Number(amount),description, id:Guid.create()});
+        props.addDebt({amount:Number(amount),description, id:Guid.create().toString()});
         setAmount("");
         setDescription("");
     }
@@ -187,10 +196,10 @@ export const AddDebt=(props:{currencyName:string,addDebt:(debt:debt)=>void})=>{
 
 
 export const ZakatCalculator=()=>{
-    const [selectedCurrencyCode,setSelectedCurrencyCode]=useState("USD");
-    const [dependents,setDependents]=useState(0);
-    const [assets,setAssets]=useState<asset[]>([]);
-    const [debts,setDebts]=useState<debt[]>([]);
+    const [selectedCurrencyCode,setSelectedCurrencyCode]=useLocalStorage("ShariahStandards-Zakat-Currency","USD");
+    const [dependents,setDependents]=useLocalStorage<number>("ShariahStandards-Zakat-Dependents",0);
+    const [assets,setAssets]=useLocalStorage<asset[]>("ShariahStandards-Zakat-Assets",[]);
+    const [debts,setDebts]=useLocalStorage<debt[]>("ShariahStandards-Zakat-Debts",[]);
 
     const addAsset=(asset:asset)=>{
         var newAssets=assets.concat([asset]);
@@ -231,9 +240,7 @@ export const ZakatCalculator=()=>{
             return Math.ceil(debt.amount);
         }));
     }
-    const zakatDue=()=>{
-        return Math.ceil(zakatableWealthTotal()/40.0);
-    }
+  
     const zakatDuePerMonth=()=>{
         return Math.ceil(zakatableWealthTotal()/(40.0*12));
     }
@@ -274,7 +281,9 @@ export const ZakatCalculator=()=>{
                         </tr>
                     </thead>
                     <tbody>
-                            {assets.map(asset=><AssetRow key={asset.id.toString()} currencyName={selectedCurrencyCode} asset={asset} remove={(asset)=>removeAsset(asset)}/>)}
+                        {assets.map(asset=>
+                            <AssetRow key={asset.id} currencyName={selectedCurrencyCode} asset={asset} remove={(asset)=>removeAsset(asset)}/>
+                        )}
                     </tbody>
                 </table>}
             </div>
@@ -299,7 +308,9 @@ export const ZakatCalculator=()=>{
                   </tr>
               </thead>
               <tbody>
-                      {debts.map(debt=><DebtRow key={debt.id.toString()} currencyName={selectedCurrencyCode} debt={debt} remove={(debt)=>removeDebt(debt)}/>)}
+                    {debts.map(debt=>
+                        <DebtRow key={debt.id} currencyName={selectedCurrencyCode} debt={debt} remove={(debt)=>removeDebt(debt)}/>
+                    )}
               </tbody>
           </table>}
           <AddDebt currencyName={selectedCurrencyCode} addDebt={addDebt}/>

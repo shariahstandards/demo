@@ -1,4 +1,4 @@
-import {KeyboardEvent, useState} from 'react'
+import {KeyboardEvent} from 'react'
 export interface InputProps{
     value:string,
     onChange:(newValue:string)=>void,

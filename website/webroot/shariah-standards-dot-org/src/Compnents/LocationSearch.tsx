@@ -1,4 +1,4 @@
-import { KeyboardEvent, useState } from "react";
+import { useState } from "react";
 import { MapLocation } from "../Services/PrayerTimesProperies";
 import {MdModeEdit} from 'react-icons/md'
 import { ActionButton, Input } from "./Wrappers";

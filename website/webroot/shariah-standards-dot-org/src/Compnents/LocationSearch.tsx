@@ -1,6 +1,7 @@
 import { KeyboardEvent, useState } from "react";
 import { MapLocation } from "../Services/PrayerTimesProperies";
 import {MdModeEdit} from 'react-icons/md'
+import { ActionButton, Input } from "./Wrappers";
 
 export interface LocationSearchProps{
     searchText:string,
@@ -32,24 +33,19 @@ export const LocationSearch=(props:LocationSearchProps)=>{
             setResultsFound(false);
         }
     }
-    const handleKeypress = (e: KeyboardEvent<HTMLInputElement>) => {
-      if (e.key==="Enter") {
-        searchLocation();
-      }
-    };
+    
     return (<div style={{padding:10}}>
         {(!props.previouslyFoundMapLocation) &&
-    <div>
-        <input 
-            type={"text"} 
+    <div  style={{display: "flex", alignItems: "center",justifyContent:"center"}}>
+        <Input 
             value={searchText} 
             placeholder={"type a place name"} 
-            onChange={(event)=> setSearchText(event.target.value)}
-            onKeyUp={(e)=>handleKeypress(e)}
+            onChange={(value)=> setSearchText(value)}
+            onEnter={()=>searchLocation()}
             />
-        {canSearch() && <button onClick={()=>searchLocation()} type={"submit"}>Search</button>}
+        {canSearch() && <ActionButton onClick={()=>searchLocation()}>Search</ActionButton>}
         {searched && (!resultsFound) && <>No results Found</>}
     </div>}
-        {props.previouslyFoundMapLocation && <div>{props.previouslyFoundMapLocation.locationName} <MdModeEdit style={{cursor:"pointer"}} onClick={()=>{props.clearLocation()}}/></div>}
+        {props.previouslyFoundMapLocation && <div  style={{display: "flex", alignItems: "center",justifyContent:"center"}}>{props.previouslyFoundMapLocation.locationName} <MdModeEdit style={{cursor:"pointer"}} onClick={()=>{props.clearLocation()}}/></div>}
     </div>);
 }

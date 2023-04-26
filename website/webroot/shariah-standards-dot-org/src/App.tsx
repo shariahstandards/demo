@@ -1,36 +1,42 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import './tailwind.css';
 import './App.css';
-import { PrayerTimesWithQiblaMap } from './Compnents/PrayerTimesWithQiblaMap'
+// import { PrayerTimesWithQiblaMap } from './Compnents/PrayerTimesWithQiblaMap'
+import { useStore } from './Services/Store';
+import { Link, Outlet } from 'react-router-dom';
+import {MdMenu} from 'react-icons/md'
 
-interface appConfig{
-  googleMapsApiKey:string
-}
 export const App= ()=> {
-  const [config,setConfig] = useState<appConfig|undefined>()
+  const {load,config} = useStore();
   useEffect(()=>{
-    const getConfig = async()=>{
-      var response = await fetch("config.json");
-      var responseObject =await response.json() as appConfig;
-      return responseObject;
-    }
-    getConfig().then(response=>{
-      setConfig(response);
-    })
-  },[])
+    load();
+  },[load])
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src="/logo.svg" width={100} alt="shariah standards"/>
+      <header className="App-header" style={{width:"80%", marginLeft:"auto", marginRight:"auto"}}>
+        <div className='flex flex-row items-center p-2'>
+          <div>
+            <Link to={"/"}>
+            <img src="/logo.svg" className='h-auto w-24' alt="shariah standards"/>
+            </Link>
+          </div>
+          <div style={{fontSize:"20pt",color:"black",textAlign:"center", flex:1}}>
+            Shariah Standards 
+          </div>
+          <div style={{width:100}}>
+            <Link to="/menu">
+            <MdMenu style={{fontSize:80,padding:10,paddingLeft:0}}/>
+            </Link>
+          </div>
+        </div>
       </header>
-      <div style={{fontSize:"20pt"}}>
-        Shariah Standards 
-      </div>
       <div>
         {config &&
-        <PrayerTimesWithQiblaMap 
-          googleMapsApiKey={config.googleMapsApiKey}
-        />}
+        <div id="detail">
+          <Outlet/>
+        </div>
+}
       </div>
     </div>
   );

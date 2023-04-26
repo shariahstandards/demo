@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { prayerTimesForDay } from '../Services/prayerTimesForDay'
 import { ShariahstandardsOrgPrayerTimesService } from '../Services/prayerTimesService';
 import { MapLocation } from '../Services/PrayerTimesProperies'
+import { PageContainer } from './Wrappers/Containers';
 
 
 
@@ -33,26 +34,20 @@ export const PrayerTimes = (props: {
 			{prayerTimes &&
 			<>
 				
-				<div>
-					<span className="shariahstandards-prayertimes__date">
+				<PageContainer>
+					<div>
+					<span >
 						{prayerTimes.weekDay} &nbsp; {prayerTimes.simpleDate} &nbsp;
 					</span>
 				
-					<span className="shariahstandards-prayertimes__date">
+					<span className="">
 						{prayerTimes.hijriDate.day} &nbsp; 
 						{prayerTimes.hijriDate.month.arabicName} &nbsp;
 						{prayerTimes.hijriDate.month.englishName} &nbsp;
 						{prayerTimes.hijriDate.year} &nbsp;
 					</span>
-					
-				</div>
-				<div>
-					<div style={{ display: 'none' }}>{props.mapLocation.latitude}, {props.mapLocation.longitude}</div>
-					<div style={{
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'center'
-					}}>
+					</div>
+					<div>
 						<div style={{ display: 'flex', flexDirection: 'row' }}>
 							<PrayerTime name='Fajr' time={prayerTimes.fajr} />
 							<PrayerTime name='Sunrise' time={prayerTimes.sunrise} />
@@ -64,14 +59,14 @@ export const PrayerTimes = (props: {
 						</div>
 					</div>
 					<div>{prayerTimes.timeZoneName} {prayerTimes.timeZoneAbbreviation}</div>
-				</div>
+				</PageContainer>
 				</>}
 		</div>
 	);
 }
 export const PrayerTime = (props: { name: string, time: string }) => {
 	return (
-		<div style={{ padding: 5 }}>
+		<div style={{ padding: 5,textAlign:"center", backgroundColor:"#ddc",margin:2 }}>
 			{props.name} <br /> {props.time}
 		</div>)
 

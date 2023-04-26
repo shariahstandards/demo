@@ -12,22 +12,27 @@
     "@types/node": "^16.18.10",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
+    "@types/react-router-dom": "^5.3.3",
+    "guid-typescript": "^1.0.9",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.41",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
+    "react-router-dom": "^6.10.0",
     "react-scripts": "^5.0.1",
     "suncalc": "^1.9.0",
     "typescript": "^4.9.4",
     "use-local-storage": "^2.3.6",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "zustand": "^4.3.7"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "tw":"npx tailwindcss -i ./src/tailwindInput.txt -o ./src/tailwind.css --watch"
   },
   "eslintConfig": {
     "extends": [
@@ -46,5 +51,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
   }
 }

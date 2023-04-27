@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { CurrencyService } from "../Services/currencyService";
-import { Button, NumberInput, PageContainer, PageHeading, SectionHeading, SelectList } from "../Compnents/Wrappers";
+import { Button, NumberInput, PageContainer, PageHeading, SectionHeading, SelectList } from "./Wrappers";
 import useLocalStorage from "use-local-storage";
 
 export interface asset{
@@ -256,7 +256,7 @@ export const ZakatCalculator=()=>{
                     options={currencies.map(c=>{return {content:c.name,keyValue:c.suffix}})}
                 />
             </div>
-        <div>  
+        <div className="shadow-md border-1 p-2 bg-blue-100 mb-2">  
             <SectionHeading>Zakat Free Wealth Allowance</SectionHeading>
             <div className="flex flex-row items-center">
                 <div className="w-1/2">
@@ -269,7 +269,7 @@ export const ZakatCalculator=()=>{
             </div>
         </div>
         <div className="shadow-md border-1 p-2 bg-green-100 mb-2">
-            <SectionHeading>Assets of you and your dependents</SectionHeading>
+            <SectionHeading>Assets owned by you and your dependents</SectionHeading>
             <div className="w-full">   
                 { assets.length>0 && 
                 <table className="w-full table-auto text-left">
@@ -296,7 +296,7 @@ export const ZakatCalculator=()=>{
         <div className="shadow-md border-1 p-2 bg-red-100 mb-2">
 
 		<div className="col-md-12">
-			<SectionHeading>Debts of you and your dependents</SectionHeading>
+			<SectionHeading>Debts owed by you and your dependents</SectionHeading>
 
             {debts.length>0 &&
 		 	 <table className="w-full table-auto text-left">

@@ -7,11 +7,12 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import { SignIn } from './routes/SignIn';
+import { SignIn } from './Compnents/SignIn';
 import { ErrorPage } from './RoureError';
 import { PrayerTimesWithQiblaMap } from './Compnents/PrayerTimesWithQiblaMap';
-import { Menu } from './routes/Menu';
-import { ZakatCalculator } from './routes/ZakatCalculator';
+import { Menu } from './Compnents/Menu';
+import { ZakatCalculator } from './Compnents/ZakatCalculator';
+import { InheritanceShares } from './Compnents/InheritanceShares';
 
 
 const router = createBrowserRouter([
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path:"/Zakat",
         element:<ZakatCalculator/>
+      },
+      {
+        path:"/Inheritance",
+        element:<InheritanceShares/>
       }
     ]
   }

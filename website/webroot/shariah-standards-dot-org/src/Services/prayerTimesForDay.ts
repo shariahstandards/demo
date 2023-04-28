@@ -14,10 +14,10 @@ export interface prayerTimesForDay {
 	//timeZoneId: string;
 	timeZoneAbbreviation:string;
 	//timeZoneChange:boolean;
-	//maghribIsAdjusted: boolean;
-	//fajrIsAdjusted: boolean;
-	//fajrIsAdjustedEarlier: boolean;
-	//maghribIsAdjustedLater: boolean;
+	maghribIsAdjusted: boolean;
+	fajrIsAdjusted: boolean;
+	fajrIsAdjustedEarlier: boolean;
+	maghribIsAdjustedLater: boolean;
 	//times: [prayerTime];
 	hijriDate:hijriDate;
 	fajr:string;

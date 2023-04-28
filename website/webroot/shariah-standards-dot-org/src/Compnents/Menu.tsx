@@ -9,6 +9,8 @@ export const Menu=()=>{
             <Link to={"/"}><MenuItem>Prayer Times and Direction</MenuItem></Link>
             <Link to="/Zakat"><MenuItem>Zakat Calculator</MenuItem></Link>
             <Link to="/Inheritance"><MenuItem>Inheritance Shares Calculator</MenuItem></Link>
+            <Link to="/QuranSearch"><MenuItem>Qur'an Search</MenuItem></Link>
+            <Link to="/QuranVerse"><MenuItem>Qur'an Browse</MenuItem></Link>
         </div>
         <div className="w-1/4"></div>
         </div>

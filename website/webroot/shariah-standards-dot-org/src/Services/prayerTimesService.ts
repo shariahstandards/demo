@@ -63,7 +63,7 @@ export class ShariahstandardsOrgPrayerTimesService {
 			times.sunset = moment(times.solarNoon).add(2, "hours").toDate();
 			maghribIsAdjustedLater = true;
 		}
-		var fajrIsAdjustedEarlier = false;
+		// var fajrIsAdjustedEarlier = false;
 		
 		var noon = moment(times.solarNoon);
 		var sunset = moment(times.sunset);
@@ -85,7 +85,7 @@ export class ShariahstandardsOrgPrayerTimesService {
 				maghribIsAdjusted: maghribIsAdjusted,
 				fajrIsAdjusted: fajrIsAdjusted,
 				maghribIsAdjustedLater: maghribIsAdjustedLater,
-				fajrIsAdjustedEarlier: fajrIsAdjustedEarlier,
+				//fajrIsAdjustedEarlier: fajrIsAdjustedEarlier,
 				fajr: moment(times.fajr).utcOffset(utcOffset).add(1,'m').format(timeFormat),
 				sunrise: moment(times.sunrise).utcOffset(utcOffset).format(timeFormat),
 				zuhr: noon.utcOffset(utcOffset).add(1, 'm').format(timeFormat),
@@ -231,10 +231,10 @@ export class ShariahstandardsOrgPrayerTimesService {
 			//timeZoneId: zone.abbr,//timeZone.timeZoneId,
 			timeZoneAbbreviation:zone.abbr(Number(timestamp)),//timeZoneAbbreviation,
 			//result.timeZoneChange=false;
-			//result.maghribIsAdjusted=times.maghribIsAdjusted;
-			//result.maghribIsAdjustedLater=times.maghribIsAdjustedLater;
-			//result.fajrIsAdjusted= times.fajrIsAdjusted;
-			//result.fajrIsAdjustedEarlier= times.fajrIsAdjustedEarlier;
+			maghribIsAdjusted:times.maghribIsAdjusted,
+			maghribIsAdjustedLater:times.maghribIsAdjustedLater,
+			fajrIsAdjusted: times.fajrIsAdjusted,
+			fajrIsAdjustedEarlier: times.fajrIsAdjustedEarlier,
 			//result.times=times;
 			fajr:times.fajr,
 			sunrise:times.sunrise,

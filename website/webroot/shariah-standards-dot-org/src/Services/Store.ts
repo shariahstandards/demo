@@ -10,10 +10,11 @@ export const useStore = create<StoreState>(
     ({
         config:undefined,
         load:async ()=>{
-            var response = await fetch("config.json");
+            var response = await fetch("/config.json");
             var responseObject =await response.json() as appConfig;
             set({config:responseObject});
         }
     }
     )
 )
+

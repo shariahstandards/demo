@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CurrencyService } from "../Services/currencyService";
 import { Button, NumberInput, PageContainer, PageHeading, SectionHeading, SelectList } from "./Wrappers";
 import useLocalStorage from "use-local-storage";
+import { Guid } from "./Guid";
 
 export interface asset{
 	description:string,
@@ -74,16 +75,6 @@ export const DebtRow=(props:{debt:debt, currencyName:string, remove:(debt:debt)=
             </tr>
     )
 }
-class Guid {
-    static create() {
-      return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
-        const r = (Math.random() * 16) | 0;
-        const v = c === "x" ? r : (r & 0x3) | 0x8;
-        return v.toString(16);
-      });
-    }
-  }
-
 export const AddAsset=(props:{currencyName:string,addAsset:(asset:asset)=>void})=>{
     const [description,setDescription]=useState("");
     const [amount,setAmount]=useState("");

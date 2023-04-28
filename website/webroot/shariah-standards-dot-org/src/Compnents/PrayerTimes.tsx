@@ -58,6 +58,21 @@ export const PrayerTimes = (props: {
 							<div style={{ clear: 'both' }}></div>
 						</div>
 					</div>
+					{prayerTimes.fajrIsAdjusted && 
+					<div>
+						Fajr and Isha are adjusted for minimum night of 4 hours
+					</div>
+					}
+					{prayerTimes.maghribIsAdjusted && 
+					<div>
+						Maghrib is adjusted for maximum day of 18 hours
+					</div>
+					}
+					{prayerTimes.maghribIsAdjustedLater && 
+					<div>
+						Maghrib is adjusted for minimum day of 4 hours
+					</div>
+					}
 					<div>{prayerTimes.timeZoneName} {prayerTimes.timeZoneAbbreviation}</div>
 				</PageContainer>
 				</>}

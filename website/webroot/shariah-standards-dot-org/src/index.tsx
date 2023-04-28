@@ -7,12 +7,14 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import { SignIn } from './Compnents/SignIn';
+//import { SignIn } from './Compnents/SignIn';
 import { ErrorPage } from './RoureError';
 import { PrayerTimesWithQiblaMap } from './Compnents/PrayerTimesWithQiblaMap';
 import { Menu } from './Compnents/Menu';
 import { ZakatCalculator } from './Compnents/ZakatCalculator';
 import { InheritanceShares } from './Compnents/InheritanceShares';
+import { QuranVerse } from './Compnents/QuranVerse';
+import { QuranSearch } from './Compnents/QuranSearch';
 
 
 const router = createBrowserRouter([
@@ -25,10 +27,10 @@ const router = createBrowserRouter([
         path:"/",
         element:<PrayerTimesWithQiblaMap/>
       },
-      {
-        path:"/SignIn",
-        element:<SignIn/>
-      },
+      // {
+      //   path:"/SignIn",
+      //   element:<SignIn/>
+      // },
       {
         path:"/Menu",
         element:<Menu/>
@@ -40,6 +42,26 @@ const router = createBrowserRouter([
       {
         path:"/Inheritance",
         element:<InheritanceShares/>
+      },
+      {
+        path:"/QuranVerse",
+        element:<QuranVerse/>
+      },
+      {
+        path:"/QuranVerse/:chapter/:verse",
+        element:<QuranVerse/>
+      },
+      {
+        path:"/QuranSearch",
+        element:<QuranSearch/>
+      },
+      {
+        path:"/QuranSearch/:searchLanguage",
+        element:<QuranSearch/>
+      },
+      {
+        path:"/QuranSearch/:searchLanguage/:searchText",
+        element:<QuranSearch/>
       }
     ]
   }

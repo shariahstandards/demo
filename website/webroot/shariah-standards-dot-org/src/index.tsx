@@ -10,7 +10,6 @@ import {
 //import { SignIn } from './Compnents/SignIn';
 import { ErrorPage } from './RoureError';
 import { PrayerTimesWithQiblaMap } from './Compnents/PrayerTimesWithQiblaMap';
-import { Menu } from './Compnents/Menu';
 import { ZakatCalculator } from './Compnents/ZakatCalculator';
 import { InheritanceShares } from './Compnents/InheritanceShares';
 import { QuranVerse } from './Compnents/QuranVerse';

@@ -1,7 +1,7 @@
 import { Link, useNavigate, useParams } from "react-router-dom"
 import { Button, Input, PageContainer, SectionHeading } from "./Wrappers"
 import { useEffect, useState } from "react";
-import { SearchResultGroup, SearchResults, useQuran as useQuranTools } from "../Services/QuranService";
+import { SearchResult, SearchResultGroup, SearchResults, useQuran as useQuranTools } from "../Services/QuranService";
 import { ArabicKeyboard } from "./ArabicKeyboard";
 import useLocalStorage from "use-local-storage";
 
@@ -87,18 +87,52 @@ export const SearchResultGroupListing=(props:{group:SearchResultGroup,isArabic:b
 </div>
 {shown && <div className="w-full">
     {group.searchResults.map(searchResult=>
-        <div className="" key={searchResult.id}>
-            <Link className="underline" to={"/QuranVerse/"+searchResult.surahNumber+"/"+searchResult.ayahNumber}>{searchResult.surahNumber+":"+searchResult.ayahNumber} 
-            </Link>
-            <div className={"p-2 mb-1 "+props.isArabic?"text-xl":""}>
-            {searchResult.searchResultVerseWords.map((x)=>
+    <IndividualVerseResult searchResult={searchResult} isArabic={props.isArabic}/>
+        )
+    }
+</div>}
+</div>)
+}
+
+export const IndividualVerseResult =(props:{searchResult:SearchResult,isArabic:boolean})=>{
+    const [showBothLanguages,setShowBothLanguages]=useState(false);
+    const {quranTools}=useQuranTools();
+return (
+<div className="" key={props.searchResult.id}>
+    <Link className="underline" to={"/QuranVerse/"+props.searchResult.surahNumber+"/"+props.searchResult.ayahNumber}>{
+        props.searchResult.surahNumber+":"+props.searchResult.ayahNumber} 
+    </Link>
+    <div className={"p-2 mb-1 "+props.isArabic?"text-xl":""}>
+        {props.searchResult.searchResultVerseWords.map((x)=>
             <span key={x.id} className={x.highlight?"text-red-600 font-bold":""}>
                 {x.word}{" "}
             </span>
             )}
-            </div>
-        </div>)
+    </div>
+    {(!showBothLanguages) && props.isArabic
+        && <Button onClick={()=>setShowBothLanguages(true)}>Show translation</Button>
     }
-</div>}
+    {(!showBothLanguages) && (!props.isArabic)
+        && <Button onClick={()=>setShowBothLanguages(true)}>Show original Arabic</Button>
+    }
+    {showBothLanguages && props.isArabic
+        && quranTools && 
+        <div>
+            <div>
+            {quranTools.englishQuran[props.searchResult.surahNumber][props.searchResult.ayahNumber-1].text}
+            </div>
+            <Button onClick={()=>setShowBothLanguages(false)}>Hide translation</Button>
+        </div>
+    }
+    {showBothLanguages && (!props.isArabic)
+        && quranTools && 
+            <div>
+                <div className="text-xl">
+                    {quranTools.arabicQuran[props.searchResult.surahNumber][props.searchResult.ayahNumber-1].text}
+                </div>
+            <Button onClick={()=>setShowBothLanguages(false)}>Hide original Arabic</Button>
+            </div>
+    }
+
 </div>)
 }

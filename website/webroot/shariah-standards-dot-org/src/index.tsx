@@ -27,14 +27,6 @@ const router = createBrowserRouter([
         path:"/",
         element:<PrayerTimesWithQiblaMap/>
       },
-      // {
-      //   path:"/SignIn",
-      //   element:<SignIn/>
-      // },
-      {
-        path:"/Menu",
-        element:<Menu/>
-      },
       {
         path:"/Zakat",
         element:<ZakatCalculator/>

@@ -1,17 +1,26 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './tailwind.css';
 import './App.css';
 // import { PrayerTimesWithQiblaMap } from './Compnents/PrayerTimesWithQiblaMap'
 import { useStore } from './Services/Store';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 import {MdMenu} from 'react-icons/md'
+import { Menu } from './Compnents/Menu';
 
 export const App= ()=> {
   const {load,config} = useStore();
   useEffect(()=>{
     load();
   },[load])
+  const [showMenu,setShowMenu]=useState(false);
+  const toggleMenu=()=>{
+    setShowMenu(!showMenu);
+  }
+  let location = useLocation();
 
+  useEffect(() => {
+    setShowMenu(false);
+  }, [location]);
   return (
     <div className="App">
       <header className="App-header" style={{width:"80%", marginLeft:"auto", marginRight:"auto"}}>
@@ -24,19 +33,24 @@ export const App= ()=> {
           <div style={{fontSize:"20pt",color:"black",textAlign:"center", flex:1}}>
             Shariah Standards 
           </div>
-          <div style={{width:100}}>
-            <Link to="/menu">
+          <div style={{width:100}}  className='cursor-pointer' onClick={toggleMenu}>
             <MdMenu style={{fontSize:80,padding:10,paddingLeft:0}}/>
-            </Link>
           </div>
         </div>
       </header>
       <div>
         {config &&
-        <div id="detail">
-          <Outlet/>
-        </div>
-}
+          (!showMenu) &&
+          <div id="detail">
+            <Outlet/>
+          </div>
+        }
+        {config &&
+          (showMenu) &&
+          <div id="detail">
+            <Menu />
+          </div>
+        }
       </div>
     </div>
   );

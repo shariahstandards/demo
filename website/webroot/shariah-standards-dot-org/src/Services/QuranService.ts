@@ -108,9 +108,8 @@ export class QuranConcordance{
             entryPosition=nextCharPosition;
         }
         var wordFirstChar = word[0];
-        var wordLastChar = word[word.length-1];
         var firstCharFirstEntryMatchIndex = entry.indexOf(wordFirstChar);
-        var lastCharLastEntryMatchIndex = entry.lastIndexOf(wordLastChar);
+        var lastCharLastEntryMatchIndex = entryPosition;
         if(firstCharFirstEntryMatchIndex<0){return false;}
         if(lastCharLastEntryMatchIndex<0){return false;}
         if(lastCharLastEntryMatchIndex<=firstCharFirstEntryMatchIndex) {return false;}

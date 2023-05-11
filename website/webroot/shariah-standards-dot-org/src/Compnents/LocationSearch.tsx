@@ -2,6 +2,7 @@ import { useState } from "react";
 import { MapLocation } from "../Services/PrayerTimesProperies";
 import {MdModeEdit} from 'react-icons/md'
 import { ActionButton, Button, Input } from "./Wrappers";
+import useLocalStorage from "use-local-storage";
 
 interface currentLocationListener
 {currentLocationFound:(foundLocation:{latitude:number,longitude:number}|null,locationFound:boolean)=>void}
@@ -24,7 +25,7 @@ export interface LocationSearchProps{
     previouslyFoundMapLocation:MapLocation|undefined
 }
 export const LocationSearch=(props:LocationSearchProps)=>{
-    const [searchText,setSearchText]=useState(props.searchText);
+    const [searchText,setSearchText]=useLocalStorage("ShariahStandards-LocationSearch-SearchText",props.searchText);
     const [resultsFound,setResultsFound]=useState(false);
     const [searched,setSearched]=useState(false);
 
@@ -49,7 +50,7 @@ export const LocationSearch=(props:LocationSearchProps)=>{
         }
     }
     
-    return (<div style={{padding:10}}>
+    return (<div>
         {(!props.previouslyFoundMapLocation) &&
     <div className="flex flex-row justify-center items-center">
         <SearchCurrentLocation onNewLocationFound={props.onNewLocationFound}/>
@@ -67,7 +68,8 @@ export const LocationSearch=(props:LocationSearchProps)=>{
         </div>
         {searched && (!resultsFound) && <>No results Found</>}
     </div>}
-        {props.previouslyFoundMapLocation && <div  style={{display: "flex", alignItems: "center",justifyContent:"center"}}>{props.previouslyFoundMapLocation.locationName} <MdModeEdit style={{cursor:"pointer"}} onClick={()=>{props.clearLocation()}}/></div>}
+        {props.previouslyFoundMapLocation && <div  style={{display: "flex", alignItems: "center",justifyContent:"center"}}>{props.previouslyFoundMapLocation.locationName} 
+        <div className="p-2"><Button onClick={()=>{props.clearLocation()}}><MdModeEdit /></Button></div></div>}
     </div>);
 }
 

@@ -63,4 +63,17 @@ export const SelectList = (props:SelectListProps)=>{
         </select>
     )
 }
+export const TextArea=(props:{value:string,placeHolder:string, onChange:(newValue:string)=>void, markdownSupported:boolean})=>{
+    return(
+        <>
+        <textarea 
+        className="border-solid border-2 border-slate-500 p-2  w-full"             
+            value={props.value}
+            placeholder={props.placeHolder}
+            onChange={(e)=>props.onChange(e.target.value)}
+        />
+        {props.markdownSupported && <a rel={"noreferrer"} target={"_blank"} href={"https://www.markdownguide.org/cheat-sheet"}>(Markdown is supported)</a>}
+        </>
+    )
+}
 

@@ -22,7 +22,13 @@
 .App-link {
   color: #61dafb;
 }
-
+a{
+  color: teal;
+}
+ol{
+  list-style: revert;
+  padding-left: 1rem;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

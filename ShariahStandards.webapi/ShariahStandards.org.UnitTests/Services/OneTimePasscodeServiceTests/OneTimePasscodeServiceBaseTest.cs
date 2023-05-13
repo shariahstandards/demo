@@ -13,6 +13,7 @@ public abstract class OneTimePasscodeServiceBaseTest
     {
         this.smtpClientMock=null!;
         this.configurationMock=null!;
+        this.tokenServiceMock=null!;
         Randomizer.Seed = new Random(12345678);
         faker = new Faker();
         fakeOneTimePasscode=new Faker<OneTimePasscode>()
@@ -27,6 +28,7 @@ public abstract class OneTimePasscodeServiceBaseTest
     protected Mock<ICommonValidationService> commonValidationServiceMock=null!;
     protected Mock<ISmtpClient> smtpClientMock;
     protected Mock<IConfiguration> configurationMock;
+    protected Mock<ITokenService> tokenServiceMock;
     protected Mock<IApplicationDbContext> applicationDbContextMock=null!;
     protected Mock<OneTimePasscodeService> serviceMock = null!;
     protected OneTimePasscodeService service = null!;
@@ -39,12 +41,14 @@ public abstract class OneTimePasscodeServiceBaseTest
         commonValidationServiceMock = new Mock<ICommonValidationService>();
         smtpClientMock=new Mock<ISmtpClient>();
         configurationMock=new Mock<IConfiguration>();
+        tokenServiceMock=new Mock<ITokenService>();
 
         serviceMock = new Mock<OneTimePasscodeService>(
             applicationDbContextMock.Object,
             commonValidationServiceMock.Object,
             smtpClientMock.Object,
-            configurationMock.Object
+            configurationMock.Object,
+            tokenServiceMock.Object
         );
         service = serviceMock.Object;
     }

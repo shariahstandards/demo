@@ -1,4 +1,3 @@
-using Microsoft.EntityFrameworkCore;
 
 namespace ShariahStandards.org.DatabaseModel;
 public class OneTimePasscode

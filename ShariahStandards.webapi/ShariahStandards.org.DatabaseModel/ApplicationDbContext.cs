@@ -23,6 +23,14 @@ public class ApplicationDbContext:DbContext, IApplicationDbContext
             e.HasIndex(x=>new{x.Email}).IsUnique();
         });
         modelBuilder.Entity<OneTimePasscode>().ToTable("OneTimePasscodes");
+
+        // modelBuilder.Entity<User>(e=>{
+        //     e.HasKey(x=>x.Id);
+        //     e.Property(x=>x.VerifiedEmail).HasMaxLength(200).IsRequired();
+        //     e.HasIndex(x=>x.VerifiedEmail).IsUnique();
+        // });
+        // modelBuilder.Entity<User>().ToTable("Users");
+
     }
 
     void IApplicationDbContext.Add<TEntity>(TEntity entity)

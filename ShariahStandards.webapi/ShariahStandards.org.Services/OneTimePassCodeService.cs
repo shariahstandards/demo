@@ -2,10 +2,12 @@
 using Microsoft.Extensions.Configuration;
 using MimeKit;
 using ShariahStandards.org.DatabaseModel;
+using ShariahStandards.org.Resources;
 
 namespace ShariahStandards.org.Services;
 public interface IOneTimePasscodeService
 {
+    LoginResult LoginWithOneTimePasscode(LoginWithOneTimePasscodeRequest request);
     void SendOneTimePasscode(string email);
 }
 
@@ -15,18 +17,21 @@ public class OneTimePasscodeService : IOneTimePasscodeService
     private readonly ICommonValidationService _commonValidationService;
     private readonly ISmtpClient _smtpClient;
     private readonly IConfiguration _configuration;
+    private readonly ITokenService _tokenService;
 
     public OneTimePasscodeService(
         IApplicationDbContext dbContext,
         ICommonValidationService commonValidationService,
         ISmtpClient smtpClient,
-        IConfiguration configuration
+        IConfiguration configuration,
+        ITokenService tokenService
         )
     {
         _dbContext = dbContext;
         _commonValidationService = commonValidationService;
         _smtpClient = smtpClient;
         _configuration = configuration;
+        _tokenService = tokenService;
     }
 
     public virtual OneTimePasscode BuildNewOneTimePasscode(string email)
@@ -90,8 +95,22 @@ public class OneTimePasscodeService : IOneTimePasscodeService
         message.From.Add(new MailboxAddress("ShariahStandards.org","no-reply@shariahstandards.org"));
         message.Subject="ShariahStandards.org One Time Passcode";
         var bodyBuilder=new BodyBuilder();
-        bodyBuilder.TextBody="Your one time passcode is "+oneTimePasscode.Passcode;
+        bodyBuilder.TextBody="Your one time passcode is "+oneTimePasscode.Passcode+"\n";
         message.Body = bodyBuilder.ToMessageBody();
         return message;
     }
+
+    public LoginResult LoginWithOneTimePasscode(LoginWithOneTimePasscodeRequest request)
+    {
+        var otp=_dbContext.Set<OneTimePasscode>().SingleOrDefault(x=>
+            x.Email==request.Email
+            && x.Passcode==request.Passcode
+            && x.UtcExpiryDateTime>DateTime.UtcNow);
+        if(otp==null){
+            return new LoginResult(false,string.Empty);
+        }
+        return new LoginResult(true,_tokenService.BuildNewJsonWebToken(otp));
+    }
+
+    
 }

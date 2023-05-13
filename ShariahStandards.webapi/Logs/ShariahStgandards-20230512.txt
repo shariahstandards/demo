@@ -1,0 +1,253 @@
+2023-05-12T07:19:45.2009433+01:00  [INF] Now listening on: "https://localhost:7227" (d826f4b8)
+2023-05-12T07:19:45.2059924+01:00  [INF] Now listening on: "http://localhost:5274" (d826f4b8)
+2023-05-12T07:19:45.2122142+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-12T07:19:45.2188215+01:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-12T07:19:45.2200747+01:00  [INF] Content root path: "C:\Work\GitRepositories\ShariahStandards.org\ShariahStandards.webapi\ShariahStandards.org.WebApi" (cc26f24e)
+2023-05-12T07:19:45.4725048+01:00 0HMQIM3GN4JMT:00000001 [INF] Request starting HTTP/2 GET https://localhost:7227/ - - (ca22a1cb)
+2023-05-12T07:19:45.5067511+01:00 0HMQIM3GN4JMT:00000001 [INF] Request finished HTTP/2 GET https://localhost:7227/ - - - 404 0 - 34.6680ms (791a596a)
+2023-05-12T07:19:52.9884833+01:00 0HMQIM3GN4JMT:00000003 [INF] Request starting HTTP/2 GET https://localhost:7227/swagger - - (ca22a1cb)
+2023-05-12T07:19:52.9915315+01:00 0HMQIM3GN4JMT:00000003 [INF] Request finished HTTP/2 GET https://localhost:7227/swagger - - - 301 0 - 3.0393ms (791a596a)
+2023-05-12T07:19:52.9976707+01:00 0HMQIM3GN4JMT:00000005 [INF] Request starting HTTP/2 GET https://localhost:7227/swagger/index.html - - (ca22a1cb)
+2023-05-12T07:19:53.0663854+01:00 0HMQIM3GN4JMT:00000005 [INF] Request finished HTTP/2 GET https://localhost:7227/swagger/index.html - - - 200 - text/html;charset=utf-8 68.6777ms (791a596a)
+2023-05-12T07:19:53.0827508+01:00 0HMQIM3GN4JMT:00000007 [INF] Request starting HTTP/2 GET https://localhost:7227/swagger/swagger-ui.css - - (ca22a1cb)
+2023-05-12T07:19:53.0827508+01:00 0HMQIM3GN4JMT:00000009 [INF] Request starting HTTP/2 GET https://localhost:7227/swagger/swagger-ui-bundle.js - - (ca22a1cb)
+2023-05-12T07:19:53.0830383+01:00 0HMQIM3GN4JMT:0000000B [INF] Request starting HTTP/2 GET https://localhost:7227/swagger/swagger-ui-standalone-preset.js - - (ca22a1cb)
+2023-05-12T07:19:53.1073004+01:00 0HMQIM3GN4JMT:00000007 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2023-05-12T07:19:53.1073014+01:00 0HMQIM3GN4JMT:0000000B [INF] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"' (27b0a520)
+2023-05-12T07:19:53.1073007+01:00 0HMQIM3GN4JMT:00000009 [INF] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"' (27b0a520)
+2023-05-12T07:19:53.1074171+01:00 0HMQIM3GN4JMT:00000009 [INF] Request finished HTTP/2 GET https://localhost:7227/swagger/swagger-ui-bundle.js - - - 200 1096145 text/javascript 24.6638ms (791a596a)
+2023-05-12T07:19:53.1074177+01:00 0HMQIM3GN4JMT:0000000B [INF] Request finished HTTP/2 GET https://localhost:7227/swagger/swagger-ui-standalone-preset.js - - - 200 339486 text/javascript 24.4194ms (791a596a)
+2023-05-12T07:19:53.1074280+01:00 0HMQIM3GN4JMT:00000007 [INF] Request finished HTTP/2 GET https://localhost:7227/swagger/swagger-ui.css - - - 200 143943 text/css 24.6828ms (791a596a)
+2023-05-12T07:19:53.2565885+01:00 0HMQIM3GN4JMT:0000000D [INF] Request starting HTTP/2 GET https://localhost:7227/swagger/v1/swagger.json - - (ca22a1cb)
+2023-05-12T07:19:53.2867869+01:00 0HMQIM3GN4JMT:0000000F [INF] Request starting HTTP/2 GET https://localhost:7227/swagger/favicon-32x32.png - - (ca22a1cb)
+2023-05-12T07:19:53.2874793+01:00 0HMQIM3GN4JMT:0000000F [INF] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"' (27b0a520)
+2023-05-12T07:19:53.2875767+01:00 0HMQIM3GN4JMT:0000000F [INF] Request finished HTTP/2 GET https://localhost:7227/swagger/favicon-32x32.png - - - 200 628 image/png 0.8311ms (791a596a)
+2023-05-12T07:19:53.3479650+01:00 0HMQIM3GN4JMT:0000000D [INF] Request finished HTTP/2 GET https://localhost:7227/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 91.3813ms (791a596a)
+2023-05-12T07:20:09.0486648+01:00 0HMQIM3GN4JMT:00000011 [INF] Request starting HTTP/2 POST https://localhost:7227/SendOneTimePasscode application/json 23 (ca22a1cb)
+2023-05-12T07:20:09.0518310+01:00 0HMQIM3GN4JMT:00000011 [INF] Executing endpoint '"ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)"' (500cc934)
+2023-05-12T07:20:09.0853123+01:00 0HMQIM3GN4JMT:00000011 [INF] Route matched with "{action = \"SendOneTimePasscode\", controller = \"Login\"}". Executing controller action with signature "ShariahStandards.org.Resources.SimplePostResult SendOneTimePasscode(ShariahStandards.org.Resources.SendOTPRequest)" on controller "ShariahStandards.org.WebApi.LoginController" ("ShariahStandards.org.WebApi"). (122b2fdf)
+2023-05-12T07:20:09.1919083+01:00 0HMQIM3GN4JMT:00000011 [FTL] Unable to send one time passcode (f534aed6)
+System.NotImplementedException: The method or operation is not implemented.
+   at ShariahStandards.org.Services.OneTimePassCodeService.SendOneTimePasscode(String email) in C:\Work\GitRepositories\ShariahStandards.org\ShariahStandards.webapi\ShariahStandards.org.Services\OneTimePassCodeService.cs:line 11
+   at ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode(SendOTPRequest request) in C:\Work\GitRepositories\ShariahStandards.org\ShariahStandards.webapi\ShariahStandards.org.WebApi\Controllers\LoginController.cs:line 19
+2023-05-12T07:20:09.1949457+01:00 0HMQIM3GN4JMT:00000011 [INF] Executing "ObjectResult", writing value of type '"ShariahStandards.org.Resources.SimplePostResult"'. (605b4265)
+2023-05-12T07:20:09.1996694+01:00 0HMQIM3GN4JMT:00000011 [INF] Executed action "ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)" in 111.4643ms (afa2e885)
+2023-05-12T07:20:09.1997184+01:00 0HMQIM3GN4JMT:00000011 [INF] Executed endpoint '"ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)"' (99874f2b)
+2023-05-12T07:20:09.1997804+01:00 0HMQIM3GN4JMT:00000011 [INF] Request finished HTTP/2 POST https://localhost:7227/SendOneTimePasscode application/json 23 - 200 - application/json;+charset=utf-8 151.5648ms (791a596a)
+2023-05-12T09:35:01.8593498+01:00  [INF] Executed DbCommand ("12"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2023-05-12T09:35:01.8824199+01:00  [INF] Executed DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2023-05-12T09:35:01.8843177+01:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2023-05-12T09:35:01.9347997+01:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);" (0723d8ff)
+2023-05-12T09:35:01.9355902+01:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2023-05-12T09:35:01.9375328+01:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2023-05-12T09:35:01.9409140+01:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2023-05-12T09:35:01.9529263+01:00  [INF] Applying migration '"20230512083156_InitialOTP"'. (0e2ac64d)
+2023-05-12T09:35:01.9797936+01:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE TABLE [OneTimePasscodes] (
+    [Id] int NOT NULL IDENTITY,
+    [Email] nvarchar(200) NOT NULL,
+    [PassCode] nvarchar(10) NOT NULL,
+    [UtcCreatedDateTime] datetime2 NOT NULL,
+    [UtcExpiryDateTime] datetime2 NOT NULL,
+    [UtcConfirmedDateTime] datetime2 NULL,
+    CONSTRAINT [PK_OneTimePasscodes] PRIMARY KEY ([Id])
+);" (0723d8ff)
+2023-05-12T09:35:01.9811887+01:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""CREATE UNIQUE INDEX [IX_OneTimePasscodes_Email] ON [OneTimePasscodes] ([Email]);" (0723d8ff)
+2023-05-12T09:35:01.9830222+01:00  [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20230512083156_InitialOTP', N'7.0.5');" (0723d8ff)
+2023-05-12T09:36:10.9465173+01:00  [INF] Executed DbCommand ("12"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2023-05-12T09:36:10.9687730+01:00  [INF] Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2023-05-12T09:36:10.9714932+01:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1" (0723d8ff)
+2023-05-12T09:36:10.9725089+01:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2023-05-12T09:36:10.9848420+01:00  [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2023-05-12T09:36:11.0005150+01:00  [INF] Applying migration '"20230512083604_tweakPasscode"'. (0e2ac64d)
+2023-05-12T09:36:11.1298587+01:00  [INF] Executed DbCommand ("106"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""EXEC sp_rename N'[OneTimePasscodes].[PassCode]', N'Passcode', N'COLUMN';" (0723d8ff)
+2023-05-12T09:36:11.1306731+01:00  [INF] Executed DbCommand ("0"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20230512083604_tweakPasscode', N'7.0.5');" (0723d8ff)
+2023-05-12T22:54:45.9474537+01:00  [INF] Now listening on: "https://localhost:7227" (d826f4b8)
+2023-05-12T22:54:45.9524637+01:00  [INF] Now listening on: "http://localhost:5274" (d826f4b8)
+2023-05-12T22:54:45.9579397+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-12T22:54:45.9600642+01:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-12T22:54:45.9616516+01:00  [INF] Content root path: "C:\Work\GitRepositories\ShariahStandards.org\ShariahStandards.webapi\ShariahStandards.org.WebApi" (cc26f24e)
+2023-05-12T22:54:46.2050085+01:00 0HMQJ6E01N39B:00000001 [INF] Request starting HTTP/2 GET https://localhost:7227/ - - (ca22a1cb)
+2023-05-12T22:54:46.2435863+01:00 0HMQJ6E01N39B:00000001 [INF] Request finished HTTP/2 GET https://localhost:7227/ - - - 404 0 - 39.6627ms (791a596a)
+2023-05-12T22:54:53.8011437+01:00 0HMQJ6E01N39B:00000003 [INF] Request starting HTTP/2 GET https://localhost:7227/swagger/index.html - - (ca22a1cb)
+2023-05-12T22:54:53.9022768+01:00 0HMQJ6E01N39B:00000003 [INF] Request finished HTTP/2 GET https://localhost:7227/swagger/index.html - - - 200 - text/html;charset=utf-8 101.2239ms (791a596a)
+2023-05-12T22:54:54.1530776+01:00 0HMQJ6E01N39B:00000005 [INF] Request starting HTTP/2 GET https://localhost:7227/swagger/v1/swagger.json - - (ca22a1cb)
+2023-05-12T22:54:54.2543786+01:00 0HMQJ6E01N39B:00000005 [INF] Request finished HTTP/2 GET https://localhost:7227/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 101.2859ms (791a596a)
+2023-05-12T22:55:03.9456832+01:00 0HMQJ6E01N39B:00000007 [INF] Request starting HTTP/2 POST https://localhost:7227/SendOneTimePasscode application/json 23 (ca22a1cb)
+2023-05-12T22:55:03.9484748+01:00 0HMQJ6E01N39B:00000007 [INF] Executing endpoint '"ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)"' (500cc934)
+2023-05-12T22:55:03.9623182+01:00 0HMQJ6E01N39B:00000007 [INF] Route matched with "{action = \"SendOneTimePasscode\", controller = \"Login\"}". Executing controller action with signature "ShariahStandards.org.Resources.SimplePostResult SendOneTimePasscode(ShariahStandards.org.Resources.SendOTPRequest)" on controller "ShariahStandards.org.WebApi.LoginController" ("ShariahStandards.org.WebApi"). (122b2fdf)
+2023-05-12T22:55:04.3254170+01:00 0HMQJ6E01N39B:00000007 [FTL] Unable to send one time passcode (f534aed6)
+ShariahStandards.org.Resources.InvalidRequestException: invalid email address
+   at ShariahStandards.org.Services.CommonValidationService.ValidateEmail(String email) in C:\Work\GitRepositories\ShariahStandards.org\ShariahStandards.webapi\ShariahStandards.org.Services\CommonValidationService.cs:line 13
+   at ShariahStandards.org.Services.OneTimePasscodeService.SendOneTimePasscode(String email) in C:\Work\GitRepositories\ShariahStandards.org\ShariahStandards.webapi\ShariahStandards.org.Services\OneTimePassCodeService.cs:line 51
+   at ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode(SendOTPRequest request) in C:\Work\GitRepositories\ShariahStandards.org\ShariahStandards.webapi\ShariahStandards.org.WebApi\Controllers\LoginController.cs:line 19
+2023-05-12T22:55:04.3309716+01:00 0HMQJ6E01N39B:00000007 [INF] Executing "ObjectResult", writing value of type '"ShariahStandards.org.Resources.SimplePostResult"'. (605b4265)
+2023-05-12T22:55:04.3375315+01:00 0HMQJ6E01N39B:00000007 [INF] Executed action "ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)" in 371.3258ms (afa2e885)
+2023-05-12T22:55:04.3376129+01:00 0HMQJ6E01N39B:00000007 [INF] Executed endpoint '"ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)"' (99874f2b)
+2023-05-12T22:55:04.3396945+01:00 0HMQJ6E01N39B:00000007 [INF] Request finished HTTP/2 POST https://localhost:7227/SendOneTimePasscode application/json 23 - 200 - application/json;+charset=utf-8 394.1629ms (791a596a)
+2023-05-12T23:05:13.7660996+01:00  [INF] Now listening on: "https://localhost:7227" (d826f4b8)
+2023-05-12T23:05:13.7711915+01:00  [INF] Now listening on: "http://localhost:5274" (d826f4b8)
+2023-05-12T23:05:13.7768676+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-12T23:05:13.7794621+01:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-12T23:05:13.7813615+01:00  [INF] Content root path: "C:\Work\GitRepositories\ShariahStandards.org\ShariahStandards.webapi\ShariahStandards.org.WebApi" (cc26f24e)
+2023-05-12T23:05:14.0080549+01:00 0HMQJ6JR51811:00000001 [INF] Request starting HTTP/2 GET https://localhost:7227/ - - (ca22a1cb)
+2023-05-12T23:05:14.0482570+01:00 0HMQJ6JR51811:00000001 [INF] Request finished HTTP/2 GET https://localhost:7227/ - - - 404 0 - 41.7626ms (791a596a)
+2023-05-12T23:05:20.2881310+01:00 0HMQJ6JR51811:00000003 [INF] Request starting HTTP/2 POST https://localhost:7227/SendOneTimePasscode application/json 23 (ca22a1cb)
+2023-05-12T23:05:20.2940245+01:00 0HMQJ6JR51811:00000003 [INF] Executing endpoint '"ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)"' (500cc934)
+2023-05-12T23:05:20.3091024+01:00 0HMQJ6JR51811:00000003 [INF] Route matched with "{action = \"SendOneTimePasscode\", controller = \"Login\"}". Executing controller action with signature "ShariahStandards.org.Resources.SimplePostResult SendOneTimePasscode(ShariahStandards.org.Resources.SendOTPRequest)" on controller "ShariahStandards.org.WebApi.LoginController" ("ShariahStandards.org.WebApi"). (122b2fdf)
+2023-05-12T23:05:28.1148218+01:00 0HMQJ6JR51811:00000003 [INF] Executed action "ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)" in 7802.3598ms (afa2e885)
+2023-05-12T23:05:28.1574680+01:00 0HMQJ6JR51811:00000003 [INF] Executed endpoint '"ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)"' (99874f2b)
+2023-05-12T23:05:28.1697198+01:00 0HMQJ6JR51811:00000003 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+ShariahStandards.org.Resources.InvalidRequestException: invalid email address
+   at ShariahStandards.org.Services.CommonValidationService.ValidateEmail(String email) in C:\Work\GitRepositories\ShariahStandards.org\ShariahStandards.webapi\ShariahStandards.org.Services\CommonValidationService.cs:line 13
+   at ShariahStandards.org.Services.OneTimePasscodeService.SendOneTimePasscode(String email) in C:\Work\GitRepositories\ShariahStandards.org\ShariahStandards.webapi\ShariahStandards.org.Services\OneTimePassCodeService.cs:line 51
+   at ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode(SendOTPRequest request) in C:\Work\GitRepositories\ShariahStandards.org\ShariahStandards.webapi\ShariahStandards.org.WebApi\Controllers\LoginController.cs:line 18
+   at lambda_method2(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-05-12T23:05:28.1764805+01:00 0HMQJ6JR51811:00000003 [INF] Request finished HTTP/2 POST https://localhost:7227/SendOneTimePasscode application/json 23 - 500 - text/plain;+charset=utf-8 7888.3631ms (791a596a)
+2023-05-12T23:36:32.8668358+01:00  [INF] Now listening on: "https://localhost:7227" (d826f4b8)
+2023-05-12T23:36:32.8702017+01:00  [INF] Now listening on: "http://localhost:5274" (d826f4b8)
+2023-05-12T23:36:32.8744077+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-12T23:36:32.8757022+01:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-12T23:36:32.8767579+01:00  [INF] Content root path: "C:\Work\GitRepositories\ShariahStandards.org\ShariahStandards.webapi\ShariahStandards.org.WebApi" (cc26f24e)
+2023-05-12T23:36:33.0548703+01:00 0HMQJ75B52TOO:00000001 [INF] Request starting HTTP/2 GET https://localhost:7227/ - - (ca22a1cb)
+2023-05-12T23:36:33.0892331+01:00 0HMQJ75B52TOO:00000001 [INF] Request finished HTTP/2 GET https://localhost:7227/ - - - 404 0 - 35.2316ms (791a596a)
+2023-05-12T23:36:41.3045514+01:00 0HMQJ75B52TOO:00000003 [INF] Request starting HTTP/2 GET https://localhost:7227/swagger/index.html - - (ca22a1cb)
+2023-05-12T23:36:41.3738650+01:00 0HMQJ75B52TOO:00000003 [INF] Request finished HTTP/2 GET https://localhost:7227/swagger/index.html - - - 200 - text/html;charset=utf-8 69.2977ms (791a596a)
+2023-05-12T23:36:41.4705001+01:00 0HMQJ75B52TOO:00000005 [INF] Request starting HTTP/2 GET https://localhost:7227/swagger/v1/swagger.json - - (ca22a1cb)
+2023-05-12T23:36:41.5529875+01:00 0HMQJ75B52TOO:00000005 [INF] Request finished HTTP/2 GET https://localhost:7227/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 82.5194ms (791a596a)
+2023-05-12T23:36:47.3608921+01:00 0HMQJ75B52TOO:00000007 [INF] Request starting HTTP/2 POST https://localhost:7227/SendOneTimePasscode application/json 23 (ca22a1cb)
+2023-05-12T23:36:47.3635193+01:00 0HMQJ75B52TOO:00000007 [INF] Executing endpoint '"ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)"' (500cc934)
+2023-05-12T23:36:47.3759730+01:00 0HMQJ75B52TOO:00000007 [INF] Route matched with "{action = \"SendOneTimePasscode\", controller = \"Login\"}". Executing controller action with signature "ShariahStandards.org.Resources.SimplePostResult SendOneTimePasscode(ShariahStandards.org.Resources.SendOTPRequest)" on controller "ShariahStandards.org.WebApi.LoginController" ("ShariahStandards.org.WebApi"). (122b2fdf)
+2023-05-12T23:36:53.3863571+01:00 0HMQJ75B52TOO:00000007 [INF] Executed action "ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)" in 6007.0321ms (afa2e885)
+2023-05-12T23:36:53.3869958+01:00 0HMQJ75B52TOO:00000007 [INF] Executed endpoint '"ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)"' (99874f2b)
+2023-05-12T23:36:53.4088895+01:00 0HMQJ75B52TOO:00000007 [INF] Request finished HTTP/2 POST https://localhost:7227/SendOneTimePasscode application/json 23 - 400 - application/json;+charset=utf-8 6047.9864ms (791a596a)
+2023-05-12T23:37:16.2099766+01:00 0HMQJ75B52TOO:00000009 [INF] Request starting HTTP/2 POST https://localhost:7227/SendOneTimePasscode application/json 34 (ca22a1cb)
+2023-05-12T23:37:16.2104769+01:00 0HMQJ75B52TOO:00000009 [INF] Executing endpoint '"ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)"' (500cc934)
+2023-05-12T23:37:16.2442162+01:00 0HMQJ75B52TOO:00000009 [INF] Route matched with "{action = \"SendOneTimePasscode\", controller = \"Login\"}". Executing controller action with signature "ShariahStandards.org.Resources.SimplePostResult SendOneTimePasscode(ShariahStandards.org.Resources.SendOTPRequest)" on controller "ShariahStandards.org.WebApi.LoginController" ("ShariahStandards.org.WebApi"). (122b2fdf)
+2023-05-12T23:37:17.1772909+01:00 0HMQJ75B52TOO:00000009 [INF] Executed DbCommand ("47"ms) [Parameters=["@__email_0='?' (Size = 200)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [o].[Id], [o].[Email], [o].[Passcode], [o].[UtcConfirmedDateTime], [o].[UtcCreatedDateTime], [o].[UtcExpiryDateTime]
+FROM [OneTimePasscodes] AS [o]
+WHERE [o].[Email] = @__email_0" (0723d8ff)
+2023-05-12T23:37:17.3032977+01:00 0HMQJ75B52TOO:00000009 [INF] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (Size = 200), @p1='?' (Size = 10), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [OneTimePasscodes] ([Email], [Passcode], [UtcConfirmedDateTime], [UtcCreatedDateTime], [UtcExpiryDateTime])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);" (0723d8ff)
+2023-05-12T23:37:17.7103619+01:00 0HMQJ75B52TOO:00000009 [INF] Executing "ObjectResult", writing value of type '"ShariahStandards.org.Resources.SimplePostResult"'. (605b4265)
+2023-05-12T23:37:17.7120491+01:00 0HMQJ75B52TOO:00000009 [INF] Executed action "ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)" in 1467.6945ms (afa2e885)
+2023-05-12T23:37:17.7120716+01:00 0HMQJ75B52TOO:00000009 [INF] Executed endpoint '"ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)"' (99874f2b)
+2023-05-12T23:37:17.7164616+01:00 0HMQJ75B52TOO:00000009 [INF] Request finished HTTP/2 POST https://localhost:7227/SendOneTimePasscode application/json 34 - 200 - application/json;+charset=utf-8 1506.8683ms (791a596a)
+2023-05-12T23:57:10.9871307+01:00  [INF] Now listening on: "https://localhost:7227" (d826f4b8)
+2023-05-12T23:57:10.9906758+01:00  [INF] Now listening on: "http://localhost:5274" (d826f4b8)
+2023-05-12T23:57:10.9942285+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-12T23:57:10.9955960+01:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-12T23:57:10.9967641+01:00  [INF] Content root path: "C:\Work\GitRepositories\ShariahStandards.org\ShariahStandards.webapi\ShariahStandards.org.WebApi" (cc26f24e)
+2023-05-12T23:57:11.1684405+01:00 0HMQJ7GS4P4LG:00000001 [INF] Request starting HTTP/2 GET https://localhost:7227/ - - (ca22a1cb)
+2023-05-12T23:57:11.2009672+01:00 0HMQJ7GS4P4LG:00000001 [INF] Request finished HTTP/2 GET https://localhost:7227/ - - - 404 0 - 34.0324ms (791a596a)
+2023-05-12T23:57:19.1293460+01:00 0HMQJ7GS4P4LG:00000003 [INF] Request starting HTTP/2 POST https://localhost:7227/SendOneTimePasscode application/json 34 (ca22a1cb)
+2023-05-12T23:57:19.1337382+01:00 0HMQJ7GS4P4LG:00000003 [INF] Executing endpoint '"ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)"' (500cc934)
+2023-05-12T23:57:19.1446145+01:00 0HMQJ7GS4P4LG:00000003 [INF] Route matched with "{action = \"SendOneTimePasscode\", controller = \"Login\"}". Executing controller action with signature "ShariahStandards.org.Resources.SimplePostResult SendOneTimePasscode(ShariahStandards.org.Resources.SendOTPRequest)" on controller "ShariahStandards.org.WebApi.LoginController" ("ShariahStandards.org.WebApi"). (122b2fdf)
+2023-05-12T23:57:20.1066703+01:00 0HMQJ7GS4P4LG:00000003 [INF] Executed DbCommand ("26"ms) [Parameters=["@__email_0='?' (Size = 200)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [o].[Id], [o].[Email], [o].[Passcode], [o].[UtcConfirmedDateTime], [o].[UtcCreatedDateTime], [o].[UtcExpiryDateTime]
+FROM [OneTimePasscodes] AS [o]
+WHERE [o].[Email] = @__email_0" (0723d8ff)
+2023-05-12T23:57:20.2155012+01:00 0HMQJ7GS4P4LG:00000003 [INF] Executed DbCommand ("3"ms) [Parameters=["@p3='?' (DbType = Int32), @p0='?' (Size = 10), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [OneTimePasscodes] SET [Passcode] = @p0, [UtcCreatedDateTime] = @p1, [UtcExpiryDateTime] = @p2
+OUTPUT 1
+WHERE [Id] = @p3;" (0723d8ff)
+2023-05-12T23:57:20.4508651+01:00 0HMQJ7GS4P4LG:00000003 [INF] Executing "ObjectResult", writing value of type '"ShariahStandards.org.Resources.SimplePostResult"'. (605b4265)
+2023-05-12T23:57:20.4628245+01:00 0HMQJ7GS4P4LG:00000003 [INF] Executed action "ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)" in 1314.9996ms (afa2e885)
+2023-05-12T23:57:20.4629103+01:00 0HMQJ7GS4P4LG:00000003 [INF] Executed endpoint '"ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)"' (99874f2b)
+2023-05-12T23:57:20.4689754+01:00 0HMQJ7GS4P4LG:00000003 [INF] Request finished HTTP/2 POST https://localhost:7227/SendOneTimePasscode application/json 34 - 200 - application/json;+charset=utf-8 1339.6118ms (791a596a)
+2023-05-12T23:58:09.3796187+01:00  [INF] Now listening on: "https://localhost:7227" (d826f4b8)
+2023-05-12T23:58:09.3832793+01:00  [INF] Now listening on: "http://localhost:5274" (d826f4b8)
+2023-05-12T23:58:09.3869910+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-12T23:58:09.3884468+01:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-12T23:58:09.3898588+01:00  [INF] Content root path: "C:\Work\GitRepositories\ShariahStandards.org\ShariahStandards.webapi\ShariahStandards.org.WebApi" (cc26f24e)
+2023-05-12T23:58:09.5480814+01:00 0HMQJ7HDHHB9E:00000001 [INF] Request starting HTTP/2 GET https://localhost:7227/ - - (ca22a1cb)
+2023-05-12T23:58:09.5815050+01:00 0HMQJ7HDHHB9E:00000001 [INF] Request finished HTTP/2 GET https://localhost:7227/ - - - 404 0 - 34.6546ms (791a596a)
+2023-05-12T23:58:14.9525485+01:00 0HMQJ7HDHHB9E:00000003 [INF] Request starting HTTP/2 POST https://localhost:7227/SendOneTimePasscode application/json 34 (ca22a1cb)
+2023-05-12T23:58:14.9563873+01:00 0HMQJ7HDHHB9E:00000003 [INF] Executing endpoint '"ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)"' (500cc934)
+2023-05-12T23:58:14.9681440+01:00 0HMQJ7HDHHB9E:00000003 [INF] Route matched with "{action = \"SendOneTimePasscode\", controller = \"Login\"}". Executing controller action with signature "ShariahStandards.org.Resources.SimplePostResult SendOneTimePasscode(ShariahStandards.org.Resources.SendOTPRequest)" on controller "ShariahStandards.org.WebApi.LoginController" ("ShariahStandards.org.WebApi"). (122b2fdf)
+2023-05-12T23:58:15.9474158+01:00 0HMQJ7HDHHB9E:00000003 [INF] Executed DbCommand ("26"ms) [Parameters=["@__email_0='?' (Size = 200)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [o].[Id], [o].[Email], [o].[Passcode], [o].[UtcConfirmedDateTime], [o].[UtcCreatedDateTime], [o].[UtcExpiryDateTime]
+FROM [OneTimePasscodes] AS [o]
+WHERE [o].[Email] = @__email_0" (0723d8ff)
+2023-05-12T23:58:16.0654731+01:00 0HMQJ7HDHHB9E:00000003 [INF] Executed DbCommand ("16"ms) [Parameters=["@p3='?' (DbType = Int32), @p0='?' (Size = 10), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2)"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [OneTimePasscodes] SET [Passcode] = @p0, [UtcCreatedDateTime] = @p1, [UtcExpiryDateTime] = @p2
+OUTPUT 1
+WHERE [Id] = @p3;" (0723d8ff)
+2023-05-12T23:58:16.3193257+01:00 0HMQJ7HDHHB9E:00000003 [INF] Executing "ObjectResult", writing value of type '"ShariahStandards.org.Resources.SimplePostResult"'. (605b4265)
+2023-05-12T23:58:16.3325279+01:00 0HMQJ7HDHHB9E:00000003 [INF] Executed action "ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)" in 1361.0791ms (afa2e885)
+2023-05-12T23:58:16.3326123+01:00 0HMQJ7HDHHB9E:00000003 [INF] Executed endpoint '"ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)"' (99874f2b)
+2023-05-12T23:58:16.3388655+01:00 0HMQJ7HDHHB9E:00000003 [INF] Request finished HTTP/2 POST https://localhost:7227/SendOneTimePasscode application/json 34 - 200 - application/json;+charset=utf-8 1386.3066ms (791a596a)
+2023-05-12T23:59:02.9152181+01:00 0HMQJ7HDHHB9E:00000005 [INF] Request starting HTTP/2 POST https://localhost:7227/SendOneTimePasscode application/json 34 (ca22a1cb)
+2023-05-12T23:59:02.9228189+01:00 0HMQJ7HDHHB9E:00000005 [INF] Executing endpoint '"ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)"' (500cc934)
+2023-05-12T23:59:02.9231690+01:00 0HMQJ7HDHHB9E:00000005 [INF] Route matched with "{action = \"SendOneTimePasscode\", controller = \"Login\"}". Executing controller action with signature "ShariahStandards.org.Resources.SimplePostResult SendOneTimePasscode(ShariahStandards.org.Resources.SendOTPRequest)" on controller "ShariahStandards.org.WebApi.LoginController" ("ShariahStandards.org.WebApi"). (122b2fdf)
+2023-05-12T23:59:15.0767668+01:00 0HMQJ7HDHHB9E:00000005 [INF] Executed DbCommand ("0"ms) [Parameters=["@__email_0='?' (Size = 200)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [o].[Id], [o].[Email], [o].[Passcode], [o].[UtcConfirmedDateTime], [o].[UtcCreatedDateTime], [o].[UtcExpiryDateTime]
+FROM [OneTimePasscodes] AS [o]
+WHERE [o].[Email] = @__email_0" (0723d8ff)
+2023-05-12T23:59:36.9861257+01:00  [INF] Now listening on: "https://localhost:7227" (d826f4b8)
+2023-05-12T23:59:36.9895842+01:00  [INF] Now listening on: "http://localhost:5274" (d826f4b8)
+2023-05-12T23:59:36.9934407+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-05-12T23:59:36.9947206+01:00  [INF] Hosting environment: "Development" (bc5a1a4e)
+2023-05-12T23:59:36.9957261+01:00  [INF] Content root path: "C:\Work\GitRepositories\ShariahStandards.org\ShariahStandards.webapi\ShariahStandards.org.WebApi" (cc26f24e)
+2023-05-12T23:59:37.1767771+01:00 0HMQJ7I7L5IOT:00000001 [INF] Request starting HTTP/2 GET https://localhost:7227/ - - (ca22a1cb)
+2023-05-12T23:59:37.2106171+01:00 0HMQJ7I7L5IOT:00000001 [INF] Request finished HTTP/2 GET https://localhost:7227/ - - - 404 0 - 34.6908ms (791a596a)
+2023-05-12T23:59:41.1313302+01:00 0HMQJ7I7L5IOT:00000003 [INF] Request starting HTTP/2 POST https://localhost:7227/SendOneTimePasscode application/json 34 (ca22a1cb)
+2023-05-12T23:59:41.1356458+01:00 0HMQJ7I7L5IOT:00000003 [INF] Executing endpoint '"ShariahStandards.org.WebApi.LoginController.SendOneTimePasscode (ShariahStandards.org.WebApi)"' (500cc934)
+2023-05-12T23:59:41.1482541+01:00 0HMQJ7I7L5IOT:00000003 [INF] Route matched with "{action = \"SendOneTimePasscode\", controller = \"Login\"}". Executing controller action with signature "ShariahStandards.org.Resources.SimplePostResult SendOneTimePasscode(ShariahStandards.org.Resources.SendOTPRequest)" on controller "ShariahStandards.org.WebApi.LoginController" ("ShariahStandards.org.WebApi"). (122b2fdf)
+2023-05-12T23:59:54.8067973+01:00 0HMQJ7I7L5IOT:00000003 [INF] Executed DbCommand ("26"ms) [Parameters=["@__email_0='?' (Size = 200)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [o].[Id], [o].[Email], [o].[Passcode], [o].[UtcConfirmedDateTime], [o].[UtcCreatedDateTime], [o].[UtcExpiryDateTime]
+FROM [OneTimePasscodes] AS [o]
+WHERE [o].[Email] = @__email_0" (0723d8ff)

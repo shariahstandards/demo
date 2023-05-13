@@ -243,7 +243,7 @@ export const QuranVerse = () => {
 export const QuranVerseView = (props: { linksOnArabicWords: boolean, arabicVerse: string, englishVerse: string, verseNumber: string, highlight:boolean}) => {
     return (<div className={"flex md-flex-col lg:flex-row "+(props.highlight?"bg-red-200 shadow-md":"")}>
 
-        <div className="m-2 text-xl w-1/2 p-2 border-2 shadow-md rounded-sm bg-green-50 border-slate-300">
+        <div className="arabic m-2 text-2xl w-1/2 p-2 border-2 shadow-md rounded-sm bg-green-50 border-slate-300">
             <span>({props.verseNumber}){" "}</span>
             {!props.linksOnArabicWords && props.arabicVerse}
             {props.linksOnArabicWords && props.arabicVerse.split(' ').map((word,wordIndex) =>

@@ -78,7 +78,7 @@ export const ArabicKeyboard=(props:{
     }
     
     return (
-        <div>
+        <div className="arabic">
             
             <div className="flex flex-col">
 		        <div className="flex flex-row items-center justify-stretch"> 

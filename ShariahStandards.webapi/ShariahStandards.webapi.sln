@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShariahStandards.org.WebApi", "ShariahStandards.org.WebApi\ShariahStandards.org.WebApi.csproj", "{C3E8C19D-6819-4CDC-943B-9ABB6629D6C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShariahStandards.org.Resources", "ShariahStandards.org.Resources\ShariahStandards.org.Resources.csproj", "{96B4C4B1-6BA6-45B2-95E8-5C8ED72E686D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShariahStandards.org.Services", "ShariahStandards.org.Services\ShariahStandards.org.Services.csproj", "{929C6116-C193-4E32-B6C6-B33DE4E8AEC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShariahStandards.org.DatabaseModel", "ShariahStandards.org.DatabaseModel\ShariahStandards.org.DatabaseModel.csproj", "{3211B40F-F533-48AA-94F0-BC9E8AAA7798}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShariahStandards.org.UnitTests", "ShariahStandards.org.UnitTests\ShariahStandards.org.UnitTests.csproj", "{776ECCB4-3A5B-4A88-8B86-557CAB32ACFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3E8C19D-6819-4CDC-943B-9ABB6629D6C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3E8C19D-6819-4CDC-943B-9ABB6629D6C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3E8C19D-6819-4CDC-943B-9ABB6629D6C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3E8C19D-6819-4CDC-943B-9ABB6629D6C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96B4C4B1-6BA6-45B2-95E8-5C8ED72E686D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96B4C4B1-6BA6-45B2-95E8-5C8ED72E686D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96B4C4B1-6BA6-45B2-95E8-5C8ED72E686D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96B4C4B1-6BA6-45B2-95E8-5C8ED72E686D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{929C6116-C193-4E32-B6C6-B33DE4E8AEC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{929C6116-C193-4E32-B6C6-B33DE4E8AEC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{929C6116-C193-4E32-B6C6-B33DE4E8AEC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{929C6116-C193-4E32-B6C6-B33DE4E8AEC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3211B40F-F533-48AA-94F0-BC9E8AAA7798}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3211B40F-F533-48AA-94F0-BC9E8AAA7798}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3211B40F-F533-48AA-94F0-BC9E8AAA7798}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3211B40F-F533-48AA-94F0-BC9E8AAA7798}.Release|Any CPU.Build.0 = Release|Any CPU
+		{776ECCB4-3A5B-4A88-8B86-557CAB32ACFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{776ECCB4-3A5B-4A88-8B86-557CAB32ACFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{776ECCB4-3A5B-4A88-8B86-557CAB32ACFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{776ECCB4-3A5B-4A88-8B86-557CAB32ACFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

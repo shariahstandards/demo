@@ -1,0 +1,1 @@
+dotnet ef migrations remove --startup-project .\ShariahStandards.org.WebApi\ShariahStandards.org.WebApi.csproj --project .\ShariahStandards.org.DatabaseModel\ShariahStandards.org.DatabaseModel.csproj

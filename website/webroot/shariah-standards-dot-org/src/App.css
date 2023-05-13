@@ -18,7 +18,15 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
 }
-
+/* @font-face {
+  font-family: 'Uthmani';
+  src: url('/public/Uthmani.ttf') format('truetype'); 
+}  */
+@import url(https://fonts.googleapis.com/earlyaccess/lateef.css);
+@import url(https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
+.arabic *, .arabic {
+  font-family: 'Droid Arabic Naskh', serif;
+}
 .App-link {
   color: #61dafb;
 }
